@@ -1,4 +1,4 @@
-public class quiz {
+public class Quiz {
     public static void main(String[] args) {
         int passScore = 60, myScore = 75;
         if (passScore > myScore) {
