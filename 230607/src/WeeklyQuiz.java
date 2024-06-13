@@ -23,8 +23,16 @@ public class WeeklyQuiz {
             if (userFunction == 1) System.out.printf("%d + %d = %d\n", a, b, a + b);
             else if (userFunction == 2) System.out.printf("%d - %d = %d\n", a, b, a - b);
             else if (userFunction == 3) System.out.printf("%d * %d = %d\n", a, b, a * b);
-            else if (userFunction == 4) System.out.printf("%d / %d = %d\n", a, b, a / b);
+            else if (userFunction == 4) {
+                if (b == 0) {
+                    System.out.println("두번째 값이 올바르지 않습니다.");
+                    System.out.println("처음으로 돌아갑니다.");
+                    continue;
+                }
+                System.out.printf("%d / %d = %d\n", a, b, a / b);
+            }
         }
-
     }
 }
+
+
