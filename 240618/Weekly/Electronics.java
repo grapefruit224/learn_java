@@ -1,17 +1,14 @@
 public class Electronics extends Product{
     private String brand;
 
-//    public Electronics(String name) {
-//        super(name);
-//    }
-//
-//    public Electronics(String name, double price) {
-//        super(name, price);
-//    }
-
     public Electronics(String name, double price, int stock, String brand) {
         super(name, price, stock);
         this.brand = brand;
+        calculatePrice();
+    }
+
+    public String getBrand() {
+        return brand;
     }
 
     public double calculatePrice() {

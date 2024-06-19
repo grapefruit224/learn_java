@@ -7,6 +7,13 @@ public abstract class ShoppingMall {
         count = 0;
     }
 
+    public Product[] getProducts() {
+        return products;
+    }
+    public int getCount() {
+        return count;
+    }
+
     public void addProduct(Product product) {
         if (count >= products.length) {
             expandArray();
@@ -30,7 +37,22 @@ public abstract class ShoppingMall {
 
     public void displayProducts() {
         for (int i = 0; i < count; i++) {
-            System.out.println(products[i]);
+
+            System.out.printf("상품명:%s 가격:%.1f 재고량:%d ", products[i].getName(), products[i].getPrice(), products[i].getStock());
+            if (products[i] instanceof Clothing) {
+                Clothing clothing = (Clothing) products[i];
+                System.out.printf("사이즈:" + clothing.getSize());
+            }
+            else if(products[i] instanceof Electronics) {
+                Electronics electronics = (Electronics) products[i];
+                System.out.printf("브랜드:" + electronics.getBrand());
+            }
+            else if (products[i] instanceof Food) {
+                Food food = (Food) products[i];
+                System.out.printf("유통기한:" + food.getExpirationDate());
+            }
+            System.out.println();
+
         }
     }
 

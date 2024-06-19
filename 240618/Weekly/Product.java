@@ -4,15 +4,6 @@ public class Product {
     private int stock;
 
     // 생성자
-    public Product(String name){
-        this.name = name;
-    }
-
-    public Product(String name, double price) {
-        this.name = name;
-        this.price = price;
-    }
-
     public Product(String name, double price, int stock) {
         this.name = name;
         this.price = price;
